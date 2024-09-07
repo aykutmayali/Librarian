@@ -37,3 +37,6 @@
 #### Create Models, Controllers, Routes as defined, in their own paths
 
 ### Postman Collection added into API Collection Folder 
+
+## Running Project:
+    npm run dev (developer mode)
