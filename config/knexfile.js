@@ -12,18 +12,3 @@ module.exports = {
     useNullAsDefault: true,
   }
 };
-
-
-// module.exports = {
-//     development: {
-//       client: 'sqlite3',
-//       connection: {
-//         filename: './db/library.db'
-//       },
-//       migrations: {
-//         directory: './migrations'
-//       },
-//       useNullAsDefault: true
-//     }
-//   };
-  
