@@ -58,13 +58,14 @@ cd Librarian
 ```bash
     npx knex migrate:latest --knexfile ./config/knexfile.js
 ```
-#### Create Models, Controllers, Routes as defined, in their own paths
+#### Models, Controllers, Routes as defined, in their own paths
 
 ## Development
 ```bash
     npm run dev (developer mode)
 ```
 ## Docker
+
 ### Build Docker Image 
 ```bash
     docker build -t librarian .
