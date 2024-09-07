@@ -1,0 +1,22 @@
+{
+  "name": "librarian",
+  "version": "1.0.0",
+  "description": "## Creating Git Repo     echo \"# Librarian\" >> README.md     git init     git add README.md     git commit -m \"first commit\"     git branch -M main     git remote add origin https://github.com/aykutmayali/Librarian.git     git push -u origin main",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.19.2",
+    "express-validator": "^7.2.0",
+    "knex": "^3.1.0",
+    "sqlite3": "^5.1.7"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}
