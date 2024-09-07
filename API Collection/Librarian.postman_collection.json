@@ -95,7 +95,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/books",
+					"raw": "http://localhost:3000/books?page=2&limit=2",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -103,6 +103,16 @@
 					"port": "3000",
 					"path": [
 						"books"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "2"
+						},
+						{
+							"key": "limit",
+							"value": "2"
+						}
 					]
 				}
 			},
@@ -214,6 +224,31 @@
 						"return",
 						"3",
 						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Book",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/books?query=Neuromancer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"books"
+					],
+					"query": [
+						{
+							"key": "query",
+							"value": "Neuromancer"
+						}
 					]
 				}
 			},

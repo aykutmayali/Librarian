@@ -5,7 +5,11 @@ const Knex = require('knex');  // Import Knex
 const knex = Knex(knexConfig.development);  // Pass the development config
 
 const Book = {
-  getAll: () => knex('books').select('id', 'name'),
+  //getAll: () => knex('books').select('id', 'name'),
+  getAll: (page = 1, limit = 10) => {
+    const offset = (page - 1) * limit;
+    return knex('books').select('id', 'name').limit(limit).offset(offset);
+  },
   
   getById: (id) => knex('books').where({ id }).first(),
   
@@ -27,10 +31,18 @@ const Book = {
   updateRating: (id, rating) => knex('books').where({ id }).update({ average_rating: rating }),
 
   // Update searchBooks to handle the 'query' and return matching books
-  searchBooks: (query) => {
+  // searchBooks: (query) => {
+  //   return knex('books')
+  //     .where('name', 'like', `%${query}%`) // Search for books with a name that contains the query
+  //     .select('id', 'name');  // Only return id and name fields
+  // }
+  searchBooks: (query, page = 1, limit = 10) => {
+    const offset = (page - 1) * limit;
     return knex('books')
-      .where('name', 'like', `%${query}%`) // Search for books with a name that contains the query
-      .select('id', 'name');  // Only return id and name fields
+      .where('name', 'like', `%${query}%`)
+      .select('id', 'name')
+      .limit(limit)
+      .offset(offset);
   }
 };
 

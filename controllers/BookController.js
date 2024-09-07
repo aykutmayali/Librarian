@@ -2,14 +2,15 @@ const Book = require('../models/Book');
 
 const BookController = {
   list: async (req, res) => {
-    const { query } = req.query;  // Get the search query from request parameters
+    const { query, page = 1, limit = 10 } = req.query;  // Get page and limit from query parameters
+
     if (query) {
-      // Search for books based on the query
-      const books = await Book.searchBooks(query);
+      // Search with pagination
+      const books = await Book.searchBooks(query, parseInt(page), parseInt(limit));
       return res.status(200).json(books);
     } else {
-      // If no query, return all books
-      const books = await Book.getAll();
+      // List all books with pagination
+      const books = await Book.getAll(parseInt(page), parseInt(limit));
       return res.status(200).json(books);
     }
   },
