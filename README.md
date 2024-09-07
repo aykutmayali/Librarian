@@ -33,3 +33,6 @@
 
     - After defining migrations
     npx knex migrate:latest --knexfile ./config/knexfile.js
+
+#### Create Models, Controllers, Routes as defined, in their own paths
+
