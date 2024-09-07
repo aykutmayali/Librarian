@@ -36,3 +36,4 @@
 
 #### Create Models, Controllers, Routes as defined, in their own paths
 
+### Postman Collection added into API Collection Folder 
