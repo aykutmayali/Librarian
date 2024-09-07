@@ -12,7 +12,7 @@ const BorrowedBook = {
     .where({ user_id: userId, returned: false })
     .select('borrowed_books.book_id', 'books.name', 'borrowed_books.rating'),
 
-    getPastBorrowedByUser: (userId) => knex('borrowed_books')
+  getPastBorrowedByUser: (userId) => knex('borrowed_books')
     .join('books', 'borrowed_books.book_id', 'books.id')
     .where({ user_id: userId, returned: true })
     .select('borrowed_books.book_id', 'books.name', 'borrowed_books.rating'),
